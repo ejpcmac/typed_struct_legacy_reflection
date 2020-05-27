@@ -9,7 +9,6 @@ defmodule TypedStructLegacyReflection.MixProject do
       app: :typed_struct_legacy_reflection,
       version: @version <> dev(),
       elixir: "~> 1.6",
-      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
 
@@ -27,7 +26,10 @@ defmodule TypedStructLegacyReflection.MixProject do
 
       # Package
       package: package(),
-      description: "Description for TypedStructLegacyReflection."
+      description: """
+      A TypedStruct plugin defining the reflection functions that used to be
+      built-in before TypedStruct 0.2.0.
+      """
     ]
   end
 
@@ -36,10 +38,6 @@ defmodule TypedStructLegacyReflection.MixProject do
       extra_applications: [:logger]
     ]
   end
-
-  # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_), do: ["lib"]
 
   defp deps do
     [
@@ -51,6 +49,8 @@ defmodule TypedStructLegacyReflection.MixProject do
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
 
       # Project dependencies
+      {:typed_struct,
+       github: "ejpcmac/typed_struct", branch: :develop, runtime: false},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
