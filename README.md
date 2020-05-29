@@ -37,8 +37,8 @@ defmodule StructWithReflection do
 end
 ```
 
-Three functions are then defined in your typed struct, like TypedStruct did
-before v0.2.0:
+Three functions are then defined in your typed struct, like TypedStruct did in
+v0.1.x:
 
 * `__keys__/0` - returns the keys of the struct
 * `__defaults__/0` - returns the default value for each field
@@ -86,6 +86,6 @@ Before contributing to this project, please read the
 
 ## License
 
-Copyright © 2020 Jean-Philippe Cugnet
+Copyright © 2018-2020 Jean-Philippe Cugnet
 
 This project is licensed under the [MIT license](LICENSE).

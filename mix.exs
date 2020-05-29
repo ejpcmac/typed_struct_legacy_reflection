@@ -27,8 +27,8 @@ defmodule TypedStructLegacyReflection.MixProject do
       # Package
       package: package(),
       description: """
-      A TypedStruct plugin defining the reflection functions that used to be
-      built-in before TypedStruct 0.2.0.
+      A TypedStruct plugin re-enabling the legacy reflection functions from
+      TypedStruct 0.1.x.
       """
     ]
   end

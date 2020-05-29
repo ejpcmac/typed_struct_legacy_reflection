@@ -9,7 +9,7 @@ defmodule TypedStructLegacyReflection do
   To use this plugin in your project, add this to your Mix dependencies:
 
   ```elixir
-  {:typed_struct_legacy_reflection, "~> 1.0.0"}
+  {:typed_struct_legacy_reflection, "~> #{Mix.Project.config()[:version]}"}
   ```
 
   If you do not plan to compile modules using this TypedStruct plugin at
@@ -34,8 +34,8 @@ defmodule TypedStructLegacyReflection do
   end
   ```
 
-  Three functions are then defined in your typed struct, like TypedStruct did
-  before v0.2.0:
+  Three functions are then defined in your typed struct, like TypedStruct did in
+  v0.1.x:
 
   * `__keys__/0` - returns the keys of the struct
   * `__defaults__/0` - returns the default value for each field
