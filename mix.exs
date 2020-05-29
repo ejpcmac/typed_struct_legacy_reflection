@@ -51,7 +51,7 @@ defmodule TypedStructLegacyReflection.MixProject do
 
       # Project dependencies
       {:typed_struct,
-       github: "ejpcmac/typed_struct", branch: :develop, runtime: false},
+       github: "ejpcmac/typed_struct", branch: "release/0.2.0", runtime: false},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
