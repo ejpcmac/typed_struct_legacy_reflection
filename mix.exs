@@ -7,7 +7,7 @@ defmodule TypedStructLegacyReflection.MixProject do
   def project do
     [
       app: :typed_struct_legacy_reflection,
-      version: @version <> dev(),
+      version: @version,
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
