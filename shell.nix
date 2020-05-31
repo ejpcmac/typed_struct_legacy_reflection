@@ -5,7 +5,7 @@ with pkgs;
 let
   inherit (lib) optional optionals;
 
-  elixir = beam.packages.erlangR22.elixir_1_9;
+  elixir = beam.packages.erlangR22.elixir_1_10;
   gitflow = gitAndTools.gitflow;
 in
 

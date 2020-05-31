@@ -7,9 +7,8 @@ defmodule TypedStructLegacyReflection.MixProject do
   def project do
     [
       app: :typed_struct_legacy_reflection,
-      version: @version <> dev(),
+      version: @version,
       elixir: "~> 1.6",
-      elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
 
@@ -27,7 +26,10 @@ defmodule TypedStructLegacyReflection.MixProject do
 
       # Package
       package: package(),
-      description: "Description for TypedStructLegacyReflection."
+      description: """
+      A TypedStruct plugin re-enabling the legacy reflection functions from
+      TypedStruct 0.1.x.
+      """
     ]
   end
 
@@ -37,13 +39,10 @@ defmodule TypedStructLegacyReflection.MixProject do
     ]
   end
 
-  # Specifies which paths to compile per environment.
-  defp elixirc_paths(:test), do: ["lib", "test/support"]
-  defp elixirc_paths(_), do: ["lib"]
-
   defp deps do
     [
       # Development dependencies
+      {:ex_check, "~> 0.11.0", only: :dev, runtime: false},
       {:credo, "~> 1.0", only: :dev, runtime: false},
       {:dialyxir, "~> 1.0-rc", only: :dev, runtime: false},
       {:excoveralls, ">= 0.0.0", only: :test, runtime: false},
@@ -51,6 +50,7 @@ defmodule TypedStructLegacyReflection.MixProject do
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
 
       # Project dependencies
+      {:typed_struct, "~> 0.2.0"},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
@@ -63,7 +63,7 @@ defmodule TypedStructLegacyReflection.MixProject do
       # Use a custom PLT directory for continuous integration caching.
       plt_core_path: System.get_env("PLT_DIR"),
       plt_file: plt_file(),
-      plt_add_deps: :transitive,
+      plt_add_deps: :app_tree,
       flags: [
         :unmatched_returns,
         :error_handling,
