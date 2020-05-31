@@ -50,8 +50,7 @@ defmodule TypedStructLegacyReflection.MixProject do
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
 
       # Project dependencies
-      {:typed_struct,
-       github: "ejpcmac/typed_struct", branch: "release/0.2.0", runtime: false},
+      {:typed_struct, github: "ejpcmac/typed_struct", branch: "release/0.2.0"},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
@@ -64,7 +63,7 @@ defmodule TypedStructLegacyReflection.MixProject do
       # Use a custom PLT directory for continuous integration caching.
       plt_core_path: System.get_env("PLT_DIR"),
       plt_file: plt_file(),
-      plt_add_deps: :transitive,
+      plt_add_deps: :app_tree,
       flags: [
         :unmatched_returns,
         :error_handling,
