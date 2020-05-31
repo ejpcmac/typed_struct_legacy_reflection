@@ -50,7 +50,7 @@ defmodule TypedStructLegacyReflection.MixProject do
       {:ex_unit_notifier, ">= 0.0.0", only: :test, runtime: false},
 
       # Project dependencies
-      {:typed_struct, github: "ejpcmac/typed_struct", branch: "release/0.2.0"},
+      {:typed_struct, "~> 0.2.0"},
 
       # Documentation dependencies
       {:ex_doc, "~> 0.19", only: :docs, runtime: false}
